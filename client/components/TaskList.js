@@ -25,6 +25,7 @@ export default class TaskList extends React.Component {
       <TaskRow
         todo={todo}
         onDone={this.props.onDone}
+        onEditPressed={this.props.onEditPressed}
       />
     )
   }
@@ -80,4 +81,5 @@ TaskList.propTypes = {
   onDone: React.PropTypes.func.isRequired,
   todos: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
   onAddStarted: React.PropTypes.func.isRequired,
+  onEditPressed: React.PropTypes.func.isRequired,
 }
