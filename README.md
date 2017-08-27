@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/andela-jomadoye/ReactNative-TodoList/badges/gpa.svg)](https://codeclimate.com/github/andela-jomadoye/ReactNative-TodoList) [![Issue Count](https://codeclimate.com/github/andela-jomadoye/ReactNative-TodoList/badges/issue_count.svg)](https://codeclimate.com/github/andela-jomadoye/ReactNative-TodoList)
+
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
