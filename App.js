@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Navigator } from 'react-native-deprecated-custom-components';
 import TaskList from './client/components/TaskList';
 import TaskForm from './client/components/TaskForm';
+import EditTaskForm from './client/components/EditTaskForm';
 
 export default class App extends React.Component {
   constructor(props, context) {
@@ -35,11 +36,20 @@ export default class App extends React.Component {
     this.onCancel = this.onCancel.bind(this);
     this.onAdd = this.onAdd.bind(this);
     this.onDone = this.onDone.bind(this);
+    this.onEdit = this.onEdit.bind(this);
+    this.onEditPressed = this.onEditPressed.bind(this);
   }s
 
   onAddStarted() {
     this.nav.push({
       name: 'taskform',
+    });
+  }
+
+  onEditPressed(editTodoValue) {
+    this.setState({editTodoValue, OldEditTodoValue: editTodoValue})
+    this.nav.push({
+      name: 'editTaskForm',
     });
   }
 
@@ -50,16 +60,31 @@ export default class App extends React.Component {
   onDone(todo) {
     const filteredTodos = this.state.todos.filter((filterTodo) => {
       return filterTodo.task !== todo;
-      console.log(filterTodo.task, ' ', todo);
     });
     this.setState({
       todos: filteredTodos
-    })
+    });
   }
   
   onAdd(task) {
     this.state.todos.push({ task });
     this.setState({ todos: this.state.todos })
+    this.nav.pop();
+  }
+
+  onEdit(newTodoValue, oldTodoValue) {
+    const filteredTodos = this.state.todos.map((todo) => {
+      if(todo.task === oldTodoValue) {
+        let editedTodo = {};
+        editedTodo.task = newTodoValue;
+        return editedTodo;
+      } else {
+        return todo;       
+      }
+    })
+    this.setState({
+      todos: filteredTodos
+    });
     this.nav.pop();
   }
 
@@ -74,9 +99,18 @@ export default class App extends React.Component {
           onCancel={this.onCancel}
           onAdd={this.onAdd}
         />);
+      case 'editTaskForm':
+        return (<EditTaskForm
+          onCancel={this.onCancel}
+          onEditStarted={this.onEditStarted}
+          onEdit={this.onEdit}
+          editTodoValue={this.state.editTodoValue}
+          OldEditTodoValue={this.state.OldEditTodoValue}
+        />);
       default:
         return (
           <TaskList
+            onEditPressed={this.onEditPressed}
             onAddStarted={this.onAddStarted}
             todos={this.state.todos}
             onDone={this.onDone}
@@ -98,12 +132,3 @@ export default class App extends React.Component {
     );
   }
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#59983b',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });

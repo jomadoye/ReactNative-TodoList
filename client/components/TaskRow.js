@@ -11,10 +11,15 @@ export default class TaskRow extends React.Component {
     super(props, context);
 
     this.onDonePressed = this.onDonePressed.bind(this);
+    this.onEditPressed = this.onEditPressed.bind(this);
   }
 
   onDonePressed() {
     this.props.onDone(this.props.todo.task);
+  }
+
+  onEditPressed() {
+    this.props.onEditPressed(this.props.todo.task);
   }
 
   render() {
@@ -22,7 +27,17 @@ export default class TaskRow extends React.Component {
       <View style={styles.container}>
         <Text
           style={styles.label}
-        >{this.props.todo.task}</Text>
+        >
+          {this.props.todo.task}
+        </Text>
+
+        <TouchableHighlight
+        style={styles.exitButtton}
+        onPress={this.onEditPressed}
+        >
+          <Text>Edit</Text>
+        </TouchableHighlight>
+
         <TouchableHighlight
         style={styles.doneButtton}
         onPress={this.onDonePressed}
@@ -55,10 +70,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#EAEAEA',
     borderRadius: 5,
     padding: 10,
+  }, exitButtton: {
+    backgroundColor: '#EAEAEA',
+    borderRadius: 5,
+    padding: 10,
   }
 });
 
 TaskRow.propTypes = {
+  onEditPressed: React.PropTypes.func.isRequired,
   onDone: React.PropTypes.func.isRequired,
   todo: React.PropTypes.shape({
     task: React.PropTypes.string.isRequired,
