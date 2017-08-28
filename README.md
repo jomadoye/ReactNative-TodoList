@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7d079fee84ec4b4ba18e4de714de1905)](https://www.codacy.com/app/andela-jomadoye/ReactNative-TodoList?utm_source=github.com&utm_medium=referral&utm_content=andela-jomadoye/ReactNative-TodoList&utm_campaign=badger)
 [![Code Climate](https://codeclimate.com/github/andela-jomadoye/ReactNative-TodoList/badges/gpa.svg)](https://codeclimate.com/github/andela-jomadoye/ReactNative-TodoList) [![Issue Count](https://codeclimate.com/github/andela-jomadoye/ReactNative-TodoList/badges/issue_count.svg)](https://codeclimate.com/github/andela-jomadoye/ReactNative-TodoList)
 
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
