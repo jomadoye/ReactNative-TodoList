@@ -8,10 +8,10 @@ export default class TaskList extends React.Component {
     super(props, context);
 
     const ds = new ListView.DataSource({
-      rowHasChanged: (r1, r2) => r1 !== r2,
+      rowHasChanged: (r1, r2) => r1 !== r2
     });
     this.state = {
-      dataSource: ds.cloneWithRows(props.todos),
+      dataSource: ds.cloneWithRows(props.todos)
     }
   }
 
@@ -81,5 +81,5 @@ TaskList.propTypes = {
   onDone: React.PropTypes.func.isRequired,
   todos: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
   onAddStarted: React.PropTypes.func.isRequired,
-  onEditPressed: React.PropTypes.func.isRequired,
+  onEditPressed: React.PropTypes.func.isRequired
 }

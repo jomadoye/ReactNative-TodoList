@@ -3,7 +3,6 @@ import {
     StyleSheet,
     Text,
     View,
-    ListView,
     TextInput,
     TouchableHighlight } from 'react-native';
 
@@ -11,7 +10,7 @@ export default class TaskForm extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      task: '',
+      task: ''
     }
 
     this.onChange = this.onChange.bind(this);
@@ -74,11 +73,11 @@ const styles = StyleSheet.create({
     // padding: 20,
     // flexDirection: 'row',
     // alignItems: 'center',
-  },
-  label: {
-    padding: 20,
-    fontSize: 20,
-    fontWeight: '300',
+  // },
+  // label: {
+  //   padding: 20,
+  //   fontSize: 20,
+  //   fontWeight: '300',
   }, buttonText: {
     fontSize: 18,
     fontWeight: '600',
@@ -107,5 +106,5 @@ const styles = StyleSheet.create({
 
 TaskForm.propTypes = {
   onCancel: React.PropTypes.func.isRequired,
-  onAdd: React.PropTypes.func.isRequired,
+  onAdd: React.PropTypes.func.isRequired
 }

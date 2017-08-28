@@ -3,7 +3,6 @@ import {
   StyleSheet,
   Text,
   View,
-  ListView,
   TouchableHighlight } from 'react-native';
 
 export default class TaskRow extends React.Component {
@@ -81,6 +80,6 @@ TaskRow.propTypes = {
   onEditPressed: React.PropTypes.func.isRequired,
   onDone: React.PropTypes.func.isRequired,
   todo: React.PropTypes.shape({
-    task: React.PropTypes.string.isRequired,
-  }).isRequired,
+    task: React.PropTypes.string.isRequired
+  }).isRequired
 }

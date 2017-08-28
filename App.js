@@ -1,5 +1,4 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 import { Navigator } from 'react-native-deprecated-custom-components';
 import TaskList from './client/components/TaskList';
 import TaskForm from './client/components/TaskForm';
@@ -11,23 +10,23 @@ export default class App extends React.Component {
     this.state = {
       todos: [
         {
-          task: 'Learn React Native',
+          task: 'Learn React Native'
         },
         {
-          task: 'Learn React',
+          task: 'Learn React'
         },
         {
-          task: 'Learn Angular Native',
+          task: 'Learn Angular Native'
         },
         {
-          task: 'Learn Angular',
+          task: 'Learn Angular'
         },
         {
-          task: 'Learn IOS',
+          task: 'Learn IOS'
         },
         {
-          task: 'Learn Android',
-        },
+          task: 'Learn Android'
+        }
       ]
     }
     this.onAddStarted = this.onAddStarted.bind(this);
@@ -38,18 +37,18 @@ export default class App extends React.Component {
     this.onDone = this.onDone.bind(this);
     this.onEdit = this.onEdit.bind(this);
     this.onEditPressed = this.onEditPressed.bind(this);
-  }s
+  }
 
   onAddStarted() {
     this.nav.push({
-      name: 'taskform',
+      name: 'taskform'
     });
   }
 
   onEditPressed(editTodoValue) {
     this.setState({editTodoValue, OldEditTodoValue: editTodoValue})
     this.nav.push({
-      name: 'editTaskForm',
+      name: 'editTaskForm'
     });
   }
 
@@ -92,7 +91,7 @@ export default class App extends React.Component {
     return Navigator.SceneConfigs.FloatFromBottom;
   }
 
-  renderScene(route, nav) {
+  renderScene(route) {
     switch (route.name) {
       case 'taskform':
         return (<TaskForm

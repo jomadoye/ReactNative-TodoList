@@ -3,7 +3,6 @@ import {
     StyleSheet,
     Text,
     View,
-    ListView,
     TextInput,
     TouchableHighlight } from 'react-native';
 
@@ -11,7 +10,7 @@ export default class EditTaskForm extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      task: props.editTodoValue,
+      task: props.editTodoValue
     }
 
     this.onChange = this.onChange.bind(this);
@@ -68,24 +67,23 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F7F7F7',
     justifyContent: 'flex-start',
-    paddingTop: 150,
-    backgroundColor: '#F7F7F7',
+    paddingTop: 150
     // borderWidth: 1,
     // borderColor: '#E7E7E7',
     // padding: 20,
     // flexDirection: 'row',
     // alignItems: 'center',
-  },
-  label: {
-    padding: 20,
-    fontSize: 20,
-    fontWeight: '300',
+  // },
+  // label: {
+  //   padding: 20,
+  //   fontSize: 20,
+  //   fontWeight: '300',
   }, buttonText: {
     fontSize: 18,
     fontWeight: '600',
-    color: '#FAFAFA',
+    color: '#FAFAFA'
   }, cancelButton: {
-    backgroundColor: '#666',
+    backgroundColor: '#666'
   }, input: {
     borderWidth: 1,
     borderColor: '#D7D7D7',
@@ -93,7 +91,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
     padding: 15,
-    borderRadius: 3,
+    borderRadius: 3
   }, button: {
     height:45,
     alignSelf: 'stretch',
@@ -102,11 +100,13 @@ const styles = StyleSheet.create({
     marginRight: 10,
     marginTop: 10,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   }
 });
 
 EditTaskForm.propTypes = {
   onCancel: React.PropTypes.func.isRequired,
   onEdit: React.PropTypes.func.isRequired,
+  editTodoValue: React.PropTypes.string.isRequired,
+  OldEditTodoValue: React.PropTypes.string.isRequired
 }
